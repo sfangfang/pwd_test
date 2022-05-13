@@ -9,9 +9,12 @@ while try_time > 0:
 	key_in = input("Please key in password:")
 	if key_in == password:
 		print("Login success.")
-		SystemExit
+		try_time = -1
 	else:
 		try_time = try_time - 1
+		if try_time == 0:
+			print("Login failed. Bye")
+			break
 		print("Login failed,", try_time, "more try.")
-print("Login failed. Bye")
+
 SystemExit
